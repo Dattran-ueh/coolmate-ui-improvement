@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="720" viewBox="0 0 600 720" role="img" aria-label="Minh họa áo thun">
+<rect width="600" height="720" rx="24" fill="#eef1f3"/>
+<ellipse cx="300" cy="627" rx="170" ry="22" fill="#d9dfe4"/>
+<path d="M220 155 135 200 76 300 154 348 183 300 183 590 417 590 417 300 446 348 524 300 465 200 380 155 340 178 260 178Z" fill="#173b53" stroke="#243747" stroke-width="5" stroke-linejoin="round"/>
+<path d="M252 166 Q300 235 348 166" fill="#eef1f3" stroke="#243747" stroke-width="7"/>
+<path d="M190 561H409" stroke="#ffffff" stroke-opacity=".25" stroke-width="4"/>
+<path d="M295 244V521" stroke="#ffffff" stroke-opacity=".10" stroke-width="6"/>
+</svg>

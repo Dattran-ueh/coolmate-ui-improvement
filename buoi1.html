@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bài tập cải tiến thẻ sản phẩm bằng HTML và CSS">
+  <title>Everyday UI | Bài tập cải tiến thẻ sản phẩm</title>
+  <style>/* Nền tảng */
+:root { --ink: #152c3c; --accent: #1551a3; --muted: #526472; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font: 16px/1.6 Arial, sans-serif; color: var(--ink); background: #f7f9fb; }
+a { color: var(--accent); }
+.container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.skip-link { position: absolute; top: -80px; left: 16px; background: white; padding: 12px; z-index: 10; }
+.skip-link:focus { top: 8px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #e18d18; outline-offset: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* Đầu trang */
+.site-header { background: white; border-bottom: 1px solid #dce3ea; }
+.header-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; }
+.brand { color: var(--ink); font-size: 19px; font-weight: 800; text-decoration: none; letter-spacing: 1px; }
+.intro { padding-block: 50px 34px; max-width: 830px; }
+.eyebrow { font-size: 13px; font-weight: bold; letter-spacing: 2px; color: var(--accent); }
+h1 { font-size: clamp(30px, 4vw, 48px); line-height: 1.18; margin: 12px 0; }
+.disclaimer { color: var(--muted); font-size: 14px; max-width: 740px; }
+.section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center; }
+h2 { font-size: 26px; margin-block: 16px; }
+.section-heading p { color: var(--muted); }
+/* Lưới và thẻ sản phẩm */
+.product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.product-card { min-width: 0; background: white; border: 1px solid #dce3ea; border-radius: 16px; overflow: hidden; }
+.product-card > img { display: block; width: 100%; height: auto; aspect-ratio: 5 / 6; object-fit: contain; }
+.product-body { padding: 18px; }
+.badge { display: inline-block; padding: 3px 9px; border-radius: 6px; background: #eaf1ff; color: #164d90; font-size: 13px; font-weight: bold; }
+h3 { font-size: 18px; line-height: 1.4; margin: 12px 0 6px; overflow-wrap: anywhere; }
+.material { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+.price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin-block: 12px 18px; }
+.price strong { font-size: 22px; color: #113a74; }
+.price del, .regular-price { color: var(--muted); font-size: 14px; }
+summary { min-height: 44px; display: flex; align-items: center; justify-content: center; background: var(--accent); color: white; border-radius: 8px; padding: 10px; cursor: pointer; font-weight: bold; }
+summary:hover { background: #113d7b; }
+summary::marker { content: ''; }
+summary::-webkit-details-marker { display: none; }
+details[open] summary { background: #103c77; }
+details p { font-size: 14px; margin-bottom: 0; }
+.footer { padding-block: 36px; color: var(--muted); font-size: 14px; }
+/* Máy tính bảng và điện thoại */
+@media (max-width: 1000px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) {
+  .container { width: calc(100% - 32px); }
+  .header-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .intro { padding-block: 30px 20px; }
+  .product-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .product-body { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* CTA chính ở phần giới thiệu */
+.primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  max-width: 100%;
+  margin-block: 8px 12px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.primary-cta:hover {
+  background: #113d7b;
+}</style>
+</head>
+<body>
+  <a class="skip-link" href="#products">Đến danh sách sản phẩm</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#top">EVERYDAY UI</a>
+      <a href="#products">Xem sản phẩm mẫu</a>
+    </div>
+  </header>
+  <main id="top" class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">BÀI TẬP HTML5 VÀ CSS3</p>
+      <h1 id="page-title">Chọn áo dễ hơn với thông tin rõ ràng</h1>
+      <p>Thẻ sản phẩm gọn, giá dễ so sánh và thao tác luôn hiển thị.</p>
+      <a class="primary-cta" href="#products">
+  Khám phá áo thun
+</a>
+      <p class="disclaimer">Giao diện học tập tham khảo Coolmate. Đây là thiết kế độc lập, dùng sản phẩm và giá giả định, không phải website chính thức.</p>
+    </section>
+    <section id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <h2 id="products-title">Áo thun mẫu</h2>
+        <p>4 sản phẩm minh họa</p>
+      </div>
+      <div class="product-grid">
+      <article class="product-card">
+        <img src="images/everyday.svg" alt="Minh họa áo thun everyday cotton" width="600" height="720">
+        <div class="product-body">
+          <span class="badge">Giảm 20%</span>
+          <h3>Áo thun Everyday Cotton</h3>
+          <p class="material">Cotton mềm · Regular fit</p>
+          <p class="price"><strong>159.000đ</strong> <del>199.000đ</del></p>
+          <details>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Everyday Cotton</span></summary>
+            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+          </details>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="images/active.svg" alt="Minh họa áo thun active dry" width="600" height="720">
+        <div class="product-body">
+          <span class="badge">Giảm 20%</span>
+          <h3>Áo thun Active Dry</h3>
+          <p class="material">Vải nhanh khô · Thể thao</p>
+          <p class="price"><strong>199.000đ</strong> <del>249.000đ</del></p>
+          <details>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Active Dry</span></summary>
+            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+          </details>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="images/relaxed.svg" alt="Minh họa áo thun relaxed fit" width="600" height="720">
+        <div class="product-body">
+          <span class="badge">Giảm 21%</span>
+          <h3>Áo thun Relaxed Fit</h3>
+          <p class="material">Cotton · Phom rộng</p>
+          <p class="price"><strong>149.000đ</strong> <del>189.000đ</del></p>
+          <details>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Relaxed Fit</span></summary>
+            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+          </details>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="images/essential.svg" alt="Minh họa áo thun essential basic" width="600" height="720">
+        <div class="product-body">
+          <span class="badge">Giá thường</span>
+          <h3>Áo thun Essential Basic</h3>
+          <p class="material">Mềm nhẹ · Mặc hằng ngày</p>
+          <p class="price"><strong>179.000đ</strong> <span class="regular-price">Giá bán thường</span></p>
+          <details>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Essential Basic</span></summary>
+            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+          </details>
+        </div>
+      </article>
+      </div>
+    </section>
+  </main>
+  <footer class="container footer">
+    <p>Nút Xem thông tin mở nội dung bằng HTML. Bản mẫu không có giỏ hàng hoặc thanh toán.</p>
+    <a href="#top">Về đầu trang</a>
+  </footer>
+</body>
+</html>

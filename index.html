@@ -12,17 +12,22 @@
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="#top">EVERYDAY UI</a>
-      <a href="#products">Xem sản phẩm mẫu</a>
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#intro">Giới thiệu</a></li>
+          <li><a href="#products">Sản phẩm mẫu</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <main id="top" class="container">
-    <section class="intro" aria-labelledby="page-title">
+    <section id="intro" class="intro" aria-labelledby="page-title">
       <p class="eyebrow">BÀI TẬP HTML5 VÀ CSS3</p>
       <h1 id="page-title">Chọn áo dễ hơn với thông tin rõ ràng</h1>
       <p>Thẻ sản phẩm gọn, giá dễ so sánh và thao tác luôn hiển thị.</p>
       <a class="primary-cta" href="#products">
-  Khám phá áo thun
-</a>
+        Khám phá áo thun
+      </a>
       <p class="disclaimer">Giao diện học tập tham khảo Coolmate. Đây là thiết kế độc lập, dùng sản phẩm và giá giả định, không phải website chính thức.</p>
     </section>
     <section id="products" aria-labelledby="products-title">
@@ -39,8 +44,13 @@
           <p class="material">Cotton mềm · Regular fit</p>
           <p class="price"><strong>159.000đ</strong> <del>199.000đ</del></p>
           <details>
-            <summary>Xem thông tin <span class="sr-only">Áo thun Everyday Cotton</span></summary>
-            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Everyday Cotton</span><span class="disclosure-icon" aria-hidden="true"></span></summary>
+            <ul class="product-specs">
+              <li>Đặc điểm mẫu: Cotton mềm.</li>
+              <li>Phom mẫu: Regular fit.</li>
+              <li>Kích cỡ mẫu: S, M, L, XL.</li>
+            </ul>
+            <p class="sample-note">Thông tin và giá giả định để học tập, không phải dữ liệu bán hàng của Coolmate.</p>
           </details>
         </div>
       </article>
@@ -52,8 +62,13 @@
           <p class="material">Vải nhanh khô · Thể thao</p>
           <p class="price"><strong>199.000đ</strong> <del>249.000đ</del></p>
           <details>
-            <summary>Xem thông tin <span class="sr-only">Áo thun Active Dry</span></summary>
-            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Active Dry</span><span class="disclosure-icon" aria-hidden="true"></span></summary>
+            <ul class="product-specs">
+              <li>Đặc điểm mẫu: Vải nhanh khô.</li>
+              <li>Nhu cầu minh họa: Mặc thể thao.</li>
+              <li>Kích cỡ mẫu: S, M, L, XL.</li>
+            </ul>
+            <p class="sample-note">Thông tin và giá giả định để học tập, không phải dữ liệu bán hàng của Coolmate.</p>
           </details>
         </div>
       </article>
@@ -65,8 +80,13 @@
           <p class="material">Cotton · Phom rộng</p>
           <p class="price"><strong>149.000đ</strong> <del>189.000đ</del></p>
           <details>
-            <summary>Xem thông tin <span class="sr-only">Áo thun Relaxed Fit</span></summary>
-            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Relaxed Fit</span><span class="disclosure-icon" aria-hidden="true"></span></summary>
+            <ul class="product-specs">
+              <li>Đặc điểm mẫu: Cotton.</li>
+              <li>Phom mẫu: Phom rộng.</li>
+              <li>Kích cỡ mẫu: S, M, L, XL.</li>
+            </ul>
+            <p class="sample-note">Thông tin và giá giả định để học tập, không phải dữ liệu bán hàng của Coolmate.</p>
           </details>
         </div>
       </article>
@@ -78,8 +98,13 @@
           <p class="material">Mềm nhẹ · Mặc hằng ngày</p>
           <p class="price"><strong>179.000đ</strong> <span class="regular-price">Giá bán thường</span></p>
           <details>
-            <summary>Xem thông tin <span class="sr-only">Áo thun Essential Basic</span></summary>
-            <p>Sản phẩm minh họa. Kích cỡ mẫu S, M, L, XL. Giá và thông số dùng cho bài tập; không phải dữ liệu bán hàng của Coolmate.</p>
+            <summary>Xem thông tin <span class="sr-only">Áo thun Essential Basic</span><span class="disclosure-icon" aria-hidden="true"></span></summary>
+            <ul class="product-specs">
+              <li>Đặc điểm mẫu: Mềm nhẹ.</li>
+              <li>Nhu cầu minh họa: Mặc hằng ngày.</li>
+              <li>Kích cỡ mẫu: S, M, L, XL.</li>
+            </ul>
+            <p class="sample-note">Thông tin và giá giả định để học tập, không phải dữ liệu bán hàng của Coolmate.</p>
           </details>
         </div>
       </article>

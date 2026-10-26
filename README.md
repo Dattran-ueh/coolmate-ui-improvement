@@ -23,6 +23,8 @@ Mở index.html bằng trình duyệt, giữ css/ và images/ cạnh tệp.
 - Bốn mô tả chung được thay bằng danh sách thuộc tính riêng.
 - Nhãn đóng “Thông tin & kích cỡ”, nhãn mở “Thu gọn thông tin”; mũi tên đổi theo open. Giữ cơ chế details/summary và viền focus đậm.
 
+- Sửa bổ sung: tăng độ đậm giá gốc có gạch ngang từ #728194 sang #526472 trên nền trắng; giữ nguyên cỡ chữ 12px và bố cục. Tỷ lệ tương phản tính từ mã màu tăng từ 3,97:1 lên 6,13:1.
+
 ## 6. AI và kiểm tra
 AI_USAGE.md ghi yêu cầu thực tế, kết quả và phần điều chỉnh theo phản biện người học. Kiểm tra tĩnh đối chiếu thẻ, đường dẫn, alt, id điều hướng và CSS của bản mới. Quy trình chạy, chụp ảnh trước–sau và tự sửa mã được hướng dẫn ở tài liệu bên ngoài website/.
 

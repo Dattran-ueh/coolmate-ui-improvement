@@ -216,3 +216,11 @@ Giữ lại bốn ảnh gốc để đối chiếu sự kế thừa, thay đổi
 ## 5. Nguồn đối chiếu
 
 BaiTap_CaNhan_Buoi2.pdf, các mục 4.2, 5.2, Prompt 3, 7.2, 8.2, 9.2, 10.2, 11.2 và 14.2; mã Buổi 1 do người học cung cấp; index.html, css/style.css và README.md của bộ mã Buổi 2.
+
+## 6. Sửa bổ sung độ rõ của giá gốc
+
+Ngày 27/10/2026, theo yêu cầu tiếp tục rà và sửa bài, ChatGPT chọn điểm cần cải thiện: giá gốc có gạch ngang dùng màu #728194 ở cỡ chữ 12px trên nền trắng. CSS đổi duy nhất màu của .price del sang #526472; cỡ chữ, số tiền, dấu gạch và bố cục được giữ nguyên. Tỷ lệ tương phản tính từ độ chói sRGB tăng từ khoảng 3,97:1 lên 6,13:1. Đây là phép kiểm tra màu và mã, không phải phép đo trên ảnh.
+
+Prompt bổ sung được chuẩn hóa: “Rà một vấn đề nhỏ có căn cứ trong bản Buổi 2; sửa ít thay đổi nhất; ghi nguyên nhân, selector, mã trước sau và cách kiểm tra; đồng bộ Word với ZIP.”
+
+Phần sửa này do ChatGPT thực hiện theo yêu cầu của người học, không được ghi thành thao tác sinh viên tự sửa độc lập. Ảnh trình duyệt trong báo cáo ghi lại bản đã triển khai trước lượt sửa màu bổ sung; tệp CSS mới được bàn giao trong ZIP để người học cập nhật lên GitHub và chạy lại.

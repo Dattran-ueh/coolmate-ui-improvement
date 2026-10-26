@@ -49,7 +49,7 @@ h3 { min-height: 46px; margin: 0 0 6px; font-size: 17px; line-height: 1.35; over
 .material { min-height: 38px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 .price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 8px; margin: 12px 0 16px; }
 .price strong { color: var(--ink); font-size: 24px; letter-spacing: -0.8px; }
-.price del { color: #728194; font-size: 12px; }
+.price del { color: #526472; font-size: 12px; }
 /* Nút mở thông tin có nhãn và hình dạng khác nhau giữa hai trạng thái. */
 summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 11px 12px; border: 1px solid #cad8e8; border-radius: 7px; background: #eef4fb; color: #174677; font-size: 12px; font-weight: 700; cursor: pointer; list-style: none; }
 summary::-webkit-details-marker { display: none; }

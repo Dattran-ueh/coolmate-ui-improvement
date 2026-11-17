@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+const days=['Mon','Tues','Wed','Thur','Fri'];days.push('Sat');days.unshift('Sun');let html='<table><tr>'+days.map(d=>'<th>'+(d.length>3?'<em>'+d+'</em>':d)+'</th>').join('')+'</tr>';for(let day=1;day<=35;day++){if((day-1)%7===0)html+='<tr>';html+='<td>'+(day<=30?day:'')+'</td>';if(day%7===0)html+='</tr>';}document.querySelector('#calendar').innerHTML=html+'</table>';

@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+const countries=[{iso:'CA',name:'Canada',capital:'Ottawa'},{iso:'US',name:'United States',capital:'Washington'},{iso:'IT',name:'Italy',capital:'Rome'}];for(const c of countries){let html=`<article><img width='80' src='../assets/flags/${c.iso}.png' alt='Cờ ${c.name}'>`;for(const property in c)html+=`<p><strong>${property}:</strong> ${c[property]}</p>`;document.querySelector('#result').insertAdjacentHTML('beforeend',html+'</article>');}

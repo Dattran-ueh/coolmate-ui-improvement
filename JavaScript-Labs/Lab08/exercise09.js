@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+var isCanadian=true;function calculateTax(amount,tax){return amount*tax();}function calculateTotal(price,quantity){const amount=price*quantity;return amount+calculateTax(amount,function(){return isCanadian?0.05:0;});}document.querySelector('#result').textContent='Subtotal: $30.00\nTax: 5%\nTotal: $'+calculateTotal(15,2).toFixed(2);

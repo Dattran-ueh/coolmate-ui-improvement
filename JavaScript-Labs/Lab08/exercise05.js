@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+var count=1;var output='this text was written from JS. Count = '+count;count++;output+='; Count = '+count;var temp=count*7;document.querySelector('#result').textContent=output;console.log({count,output,temp});console.warn("Ví dụ cảnh báo");console.error("Ví dụ console.error có chủ đích");

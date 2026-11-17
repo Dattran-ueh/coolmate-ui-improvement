@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+function Order(product,price,quantity){this.product=product;this.price=price;this.quantity=quantity;this.total=function(){return this.price*this.quantity;};this.output=function(){return `<p>Product: ${this.product}<br>Price: ${this.price}<br>Quantity: ${this.quantity}<br>Total: ${this.total()}</p>`;};}const orders=[new Order('Self Portrait in a Straw Hat',15,2),new Order('Untitled #23',10,4)];orders.forEach(o=>document.querySelector('#result').insertAdjacentHTML('beforeend',o.output()));

@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+const a=new String('Test'),b='Test',c='Test',d=new String('Test');document.querySelector('#result').textContent=[`typeof object: ${typeof a}`,`typeof literal: ${typeof b}`,`object == literal: ${a==b}`,`object === literal: ${a===b}`,`object == object: ${a==d}`,`literal === literal: ${b===c}`,new Date().toString(),`PI: ${Math.PI}`,`sqrt(4): ${Math.sqrt(4)}`,`random: ${Math.random()}`].join('\n');

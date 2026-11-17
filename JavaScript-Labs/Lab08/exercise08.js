@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+function outputBox(num){return `<div class='movingDiv' id='div${num}'>This is div ${num}</div>`;}for(let n=1;n<=5;n++)document.querySelector('#boxes').insertAdjacentHTML('beforeend',outputBox(n));

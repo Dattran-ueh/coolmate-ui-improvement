@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+document.querySelector('#continents').innerHTML=['Asia','Europe','Africa'].map(x=>`<li>${x}</li>`).join('');document.querySelector('#countries').innerHTML=['Vietnam','Canada','Italy'].map(x=>`<li>${x}</li>`).join('');

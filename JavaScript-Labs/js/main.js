@@ -1,0 +1,1 @@
+'use strict';console.info('JavaScript Labs – Trần Gia Đạt – 31241024727');

@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+window.addEventListener('load',()=>{for(let n=1;n<=5;n++)document.querySelector('#boxes').insertAdjacentHTML('beforeend',`<div class='movingDiv' id='div${n}'>This is div ${n}</div>`);document.querySelector('#result').textContent='window load: DOM đã sẵn sàng';document.querySelectorAll('.movingDiv').forEach(div=>div.addEventListener('mouseover',function(e){document.querySelector('#result').textContent='triggered by '+e.target.id;console.log(e,e.target);debugger;}));});

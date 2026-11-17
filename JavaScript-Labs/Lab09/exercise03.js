@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+const p=document.createElement('p');p.appendChild(document.createTextNode('this is programmatically created'));document.getElementById('first').appendChild(p);document.getElementById('iconList').removeChild(document.getElementById('deleteThisOne'));

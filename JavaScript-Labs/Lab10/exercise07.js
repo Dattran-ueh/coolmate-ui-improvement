@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+$(function(){$('figure img').on('mouseover',function(e){$('#preview').remove();const src=$(this).attr('src').replace('/small/','/medium/');$('<div id="preview">').append($('<img>',{src,alt:$(this).attr('alt')}),$('<p>').text($(this).attr('alt'))).appendTo('body').css({top:e.pageY-10,left:e.pageX+30}).fadeIn(300);$(this).addClass('gray');}).on('mousemove',e=>$('#preview').css({top:e.pageY-10,left:e.pageX+30})).on('mouseleave',function(){$(this).removeClass('gray');$('#preview').remove();});});

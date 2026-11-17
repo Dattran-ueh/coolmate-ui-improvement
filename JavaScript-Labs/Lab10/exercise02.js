@@ -1,0 +1,2 @@
+// Trần Gia Đạt – 31241024727
+$(function(){$('#version').text('jQuery '+$.fn.jquery+' đã tải');$('#msgArea').val('My class is '+$('#msgArea').attr('class'));$('#first').html('<p>new Title</p>');$('button').css('background-color','red');$('.center-icons').addClass('selected');});

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sổ thu chi</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Sổ thu chi</h1>
+      <p>Theo dõi các khoản tiền vào và tiền ra.</p>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 id="summary-title">Thống kê</h2>
+      <p>Chỉ tính giao dịch đã hoàn tất. $pending_count giao dịch đang chờ.</p>
+      <div class="cards">
+        <div class="card">Tổng thu <strong class="income">$total_income</strong></div>
+        <div class="card">Tổng chi <strong class="expense">$total_expense</strong></div>
+        <div class="card balance">Số dư <strong>$balance</strong></div>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">$form_title</h2>
+        <p class="notice" role="alert" $error_hidden>$error</p>
+        <form method="post" action="$form_action">
+          <input type="hidden" name="filter" value="$filter">
+          <label>Nội dung
+            <input name="description" value="$description" required maxlength="100" placeholder="Ví dụ: Ăn trưa">
+          </label>
+          <label>Loại giao dịch
+            <select name="type">
+              <option value="expense" $expense_selected>Chi</option>
+              <option value="income" $income_selected>Thu</option>
+            </select>
+          </label>
+          <label>Số tiền (đồng)
+            <input name="amount" value="$amount" type="number" required inputmode="numeric" min="1" max="999999999999" step="1" placeholder="Ví dụ: 35000">
+          </label>
+          <label>Ngày
+            <input name="date" value="$date" type="date" required min="1900-01-01" max="9999-12-31">
+          </label>
+          <label>Trạng thái
+            <select name="status">
+              <option value="done" $done_selected>Đã hoàn tất</option>
+              <option value="pending" $pending_selected>Chờ thực hiện</option>
+            </select>
+          </label>
+          <div class="actions">
+            <button class="primary" type="submit">$submit_label</button>
+            $cancel_button
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="list-title">
+        <div class="toolbar">
+          <h2 id="list-title">Giao dịch</h2>
+          <form class="filter-form" method="get" action="/">
+            <label>Lọc theo trạng thái
+              <select name="filter">
+                <option value="all" $filter_all>Tất cả</option>
+                <option value="done" $filter_done>Đã hoàn tất</option>
+                <option value="pending" $filter_pending>Chờ thực hiện</option>
+              </select>
+            </label>
+            <button type="submit">Lọc</button>
+          </form>
+        </div>
+        $entry_list
+      </section>
+    </div>
+  </main>
+</body>
+</html>

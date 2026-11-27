@@ -1,0 +1,59 @@
+@model DatPaper.Models.Product
+@{
+    ViewData["Title"] = "Sửa sản phẩm";
+}
+<h1>Sửa sản phẩm</h1>
+<div class="row"><div class="col-lg-7 col-md-9">
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="All" class="text-danger" role="alert"></div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DateAdded" class="form-label"></label>
+        <input asp-for="DateAdded" type="date" class="form-control" />
+        <span asp-validation-for="DateAdded" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" type="number" min="1000" max="100000000" step="1000" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label"></label>
+        <input asp-for="Stock" type="number" min="0" max="100000" step="1" class="form-control" />
+        <span asp-validation-for="Stock" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label"></label>
+        <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-select"><option value="">-- Chọn thể loại --</option></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <p class="mb-1">Ảnh hiện tại</p>
+        <img src="@(string.IsNullOrWhiteSpace(Model.ImagePath) ? "/images/no-image.jpg" : Model.ImagePath)"
+             alt="Ảnh sản phẩm hiện tại" style="width:160px;height:160px;object-fit:contain" />
+        <p class="text-muted small">Không chọn ảnh mới: giữ nguyên ảnh hiện tại.</p>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ImageUpload" class="form-label"></label>
+        <input asp-for="ImageUpload" type="file" accept=".jpg,.jpeg,.png,.gif,.webp" class="form-control" />
+        <div class="form-text">JPG, JPEG, PNG, GIF, WEBP; tối đa 2 MB. Khi lưu lỗi, hãy chọn lại ảnh trước khi gửi.</div>
+        <span asp-validation-for="ImageUpload" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Quay lại danh sách</a>
+</form>
+</div></div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

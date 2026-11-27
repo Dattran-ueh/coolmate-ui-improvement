@@ -1,0 +1,85 @@
+@model DatPaper.Models.ShippingDetail
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Thông tin đặt hàng";
+    var vietnamese = CultureInfo.GetCultureInfo("vi-VN");
+    var total = (decimal)(ViewBag.CartTotal ?? 0m);
+}
+
+<h1 class="h2">Thông tin đặt hàng</h1>
+
+<p class="text-success fw-bold">
+    Tổng tiền sản phẩm: @total.ToString("N0", vietnamese) đ
+</p>
+
+<div class="row">
+    <div class="col-lg-7">
+        <form asp-action="Checkout" method="post">
+            <div asp-validation-summary="All"
+                 class="text-danger"
+                 role="alert"></div>
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name"
+                       class="form-control"
+                       autocomplete="name" />
+                <span asp-validation-for="Name"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email"
+                       class="form-control"
+                       autocomplete="email" />
+                <span asp-validation-for="Email"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label"></label>
+                <textarea asp-for="Address"
+                          class="form-control"
+                          rows="3"
+                          autocomplete="street-address"></textarea>
+                <span asp-validation-for="Address"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Mobile" class="form-label"></label>
+                <input asp-for="Mobile"
+                       class="form-control"
+                       type="tel"
+                       autocomplete="tel" />
+                <span asp-validation-for="Mobile"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ReleaseDate"
+                       class="form-label"></label>
+                <input asp-for="ReleaseDate"
+                       type="date"
+                       class="form-control" />
+                <span asp-validation-for="ReleaseDate"
+                      class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Xác nhận đặt hàng
+            </button>
+
+            <a asp-action="AddToCart"
+               class="btn btn-outline-secondary">
+                Quay lại giỏ hàng
+            </a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

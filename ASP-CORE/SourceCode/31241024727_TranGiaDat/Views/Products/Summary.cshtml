@@ -1,0 +1,21 @@
+@model DatPaper.Models.HoaDon
+@using System.Globalization
+
+@{
+    var quantity = Model.ChiTietHoaDons.Sum(x => x.SoLuong);
+    var vietnamese = CultureInfo.GetCultureInfo("vi-VN");
+}
+
+<div class="d-flex flex-wrap align-items-center gap-2 ms-lg-3">
+    <span class="small">
+        <strong>Giỏ hàng của bạn:</strong>
+        @quantity sản phẩm,
+        @Model.TongTien.ToString("N0", vietnamese) đ
+    </span>
+
+    <a asp-controller="Products"
+       asp-action="AddToCart"
+       class="btn btn-outline-success btn-sm">
+        Xem giỏ hàng
+    </a>
+</div>

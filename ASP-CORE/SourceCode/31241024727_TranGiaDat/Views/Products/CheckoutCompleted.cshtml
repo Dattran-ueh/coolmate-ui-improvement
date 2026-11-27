@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+
+<div class="border rounded-3 p-4">
+    <h1 class="h2 text-success">Đặt hàng thành công!</h1>
+
+    <p>Cảm ơn bạn đã đặt hàng tại Đạt Paper.</p>
+
+    <p>
+        Mã đơn hàng:
+        <strong>#@ViewBag.OrderId</strong>
+    </p>
+
+    <p>
+        Tổng tiền:
+        <strong>@ViewBag.OrderTotal đ</strong>
+    </p>
+
+    @if (ViewBag.EmailSent == true)
+    {
+        <div class="alert alert-success">
+            Email xác nhận đã được gửi.
+            Bạn vui lòng kiểm tra hộp thư và thư rác.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Đơn hàng đã được lưu thành công,
+            nhưng chưa gửi được email xác nhận.
+            Bạn không cần đặt lại đơn.
+        </div>
+    }
+
+    <a asp-action="Index" class="btn btn-success">
+        Tiếp tục mua sắm
+    </a>
+</div>

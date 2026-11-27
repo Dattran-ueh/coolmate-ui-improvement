@@ -1,0 +1,24 @@
+# Cấu hình thật có thể chứa mật khẩu
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
+# Thư mục build và triển khai
+bin/
+obj/
+publish/
+
+# Bản triển khai chứa cấu hình thật
+publish.zip
+
+# Dữ liệu SQLite cũ
+app.db
+app.db-shm
+app.db-wal
+
+# Cấu hình máy và file tạm
+.vs/
+.vscode/
+*.user
+*.suo
+.DS_Store

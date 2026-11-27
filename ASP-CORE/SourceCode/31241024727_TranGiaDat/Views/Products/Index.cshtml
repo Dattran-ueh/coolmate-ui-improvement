@@ -1,0 +1,121 @@
+@model IEnumerable<DatPaper.Models.Product>
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Đạt Paper - Văn phòng phẩm";
+    var vietnamese = CultureInfo.GetCultureInfo("vi-VN");
+}
+
+<section class="bg-light rounded-3 p-4 mb-4">
+    <p class="text-success fw-bold mb-2">ĐẠT PAPER</p>
+    <h1 class="h2">Gọn góc học tập, thêm cảm hứng mỗi ngày</h1>
+    <p class="text-muted">
+        Sổ tay, bút viết và phụ kiện dành cho học tập, làm việc.
+    </p>
+    <p class="mb-3">
+        <strong>Sinh viên thực hiện:</strong>
+        Trần Gia Đạt — MSSV: 31241024727
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+        <a asp-action="Create" class="btn btn-success">
+            Thêm sản phẩm
+        </a>
+        <a asp-controller="Categories"
+           asp-action="Index"
+           class="btn btn-outline-secondary">
+            Quản lý thể loại
+        </a>
+    </div>
+</section>
+
+<h2 class="h4 mb-3">Sản phẩm văn phòng phẩm</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Chưa có sản phẩm. Hãy thêm sản phẩm đầu tiên.
+    </div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var item in Model)
+        {
+            var imagePath = string.IsNullOrWhiteSpace(item.ImagePath)
+                ? "/images/no-image.jpg"
+                : item.ImagePath;
+
+            <div class="col">
+                <article class="card h-100 shadow-sm">
+                    <img src="@imagePath"
+                         alt="@item.Name"
+                         class="card-img-top p-3"
+                         style="height:230px;object-fit:contain;" />
+
+                    <div class="card-body d-flex flex-column">
+                        <p class="text-muted small mb-1">
+                            @(item.Category?.Name ?? "Chưa phân loại")
+                        </p>
+
+                        <h3 class="card-title h5">@item.Name</h3>
+
+                        <p class="card-text">@item.Description</p>
+
+                        <p class="text-success fw-bold fs-5 mb-2">
+                            @item.Price.ToString("N0", vietnamese) đ
+                        </p>
+
+                        <p class="small mb-1">
+                            Ngày nhập:
+                            @item.DateAdded.ToString("dd/MM/yyyy")
+                        </p>
+
+                        <p class="small mb-3">
+                            Số lượng tồn: @item.Stock
+                        </p>
+
+                        <div class="mt-auto">
+                            @if (item.Stock > 0)
+{
+    <form asp-action="AddToCart"
+          asp-route-id="@item.Id"
+          method="post"
+          class="mb-2">
+        <button type="submit" class="btn btn-success w-100">
+            Mua
+        </button>
+    </form>
+}
+else
+{
+    <button type="button"
+            class="btn btn-secondary w-100 mb-2"
+            disabled>
+        Hết hàng
+    </button>
+}
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <a asp-action="Details"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-outline-secondary btn-sm">
+                                    Chi tiết
+                                </a>
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-outline-primary btn-sm">
+                                    Sửa
+                                </a>
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-outline-danger btn-sm">
+                                    Xóa
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        }
+    </div>
+}
